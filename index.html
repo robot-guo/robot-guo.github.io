@@ -32,6 +32,7 @@ body{
     background: var(--bg-main);
     color: var(--text-main);
     line-height: 1.7;
+    padding-top: 70px; /* 防止内容被固定导航栏遮挡 */
 }
 
 .container{
@@ -41,11 +42,11 @@ body{
 }
 
 /* 语言切换核心控制 CSS */
-.lang-en { display: none; } /* 默认隐藏英文，显示中文 */
+.lang-en { display: none; } 
 html[lang="en"] .lang-zh { display: none; }
 html[lang="en"] .lang-en { display: block; }
-html[lang="en"] span.lang-en, html[lang="en"] a.lang-en { display: inline-flex; }
-html[lang="zh"] span.lang-zh, html[lang="zh"] a.lang-zh { display: inline-flex; }
+html[lang="en"] span.lang-en, html[lang="en"] a.lang-en, html[lang="en"] i.lang-en { display: inline-flex; }
+html[lang="zh"] span.lang-zh, html[lang="zh"] a.lang-zh, html[lang="zh"] i.lang-zh { display: inline-flex; }
 
 /* 现代吸顶导航栏 */
 nav {
@@ -53,7 +54,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(15, 23, 42, 0.8.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
@@ -91,7 +92,7 @@ nav {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--border-color);
     color: var(--primary);
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.85rem;
@@ -104,24 +105,24 @@ nav {
 }
 
 section{
-    padding:100px 0 60px 0;
+    padding: 80px 0 40px 0;
 }
 
 h2{
-    font-size:2.2rem;
+    font-size:2.0rem;
     font-weight: 700;
     margin-bottom: 35px;
     display: flex;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(to right, #fff 30%, #94a3b8 100%);
+    background: linear-gradient(to right, #fff 40%, #94a3b8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 h2 i {
     -webkit-text-fill-color: initial;
     color: var(--primary);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 p{
@@ -153,65 +154,80 @@ a{
 }
 .btn:hover{
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2.5);
     opacity: 0.95;
 }
 
 /* Hero 欢迎区域 */
 .hero{
-    min-height:100vh;
+    min-height: calc(100vh - 70px);
     display:flex;
     align-items:center;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 .hero-content{
     display:grid;
-    grid-template-columns:1fr 2.5fr;
+    grid-template-columns: 280px 1fr;
     gap:60px;
     align-items:center;
 }
 .avatar-wrapper {
-    position: relative;
-    width: 260px;  /* 保持 260px 框框大小不变 */
+    width: 260px;  
     height: 340px;
-    
-    /* ================= 👇 新增这行内边距 👇 ================= */
-    padding: 10px; /* 让照片向内缩进 20px，你可以根据喜好改成 15px 或 30px */
-    /* ================= 👆 新增这行内边距 👆 ================= */
-    
-    /* 选做：可以给大框框加个微弱的背景色或边框，让“留白”更有质感 */
+    padding: 10px; 
     background: rgba(255, 255, 255, 0.03); 
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .avatar{
     width: 100%;
     height: 100%;
-    border-radius:24px;
+    border-radius:18px;
     object-fit:cover;
     border: 1px solid rgba(255,255,255,0.1);
 }
 .hero h1{
-    font-size:3.8rem;
+    font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: -1px;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, #fff, #bbb);
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #fff, #cbd5e1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.hero h1 .ename {
+    font-size: 3.0rem;
+    letter-spacing: -0.5px;
+}
 .subtitle{
-    font-size:1.3rem;
-    font-weight: 500;
+    font-size:1.25rem;
+    font-weight: 600;
     color:#38bdf8;
     margin-bottom: 25px;
 }
-.highlight{
-    color: var(--text-main);
-    font-weight: 600;
-    border-bottom: 1px dashed var(--primary);
+.research-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
+.research-line span {
+    white-space: nowrap;
+}
+
+.highlight {
+    background: rgba(255, 255, 255, 0.18);
+    color: #f8fbff;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-block;
+}
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -228,7 +244,7 @@ a{
 }
 .card h3 {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #fff;
 }
 .card:hover{
@@ -248,13 +264,14 @@ a{
 .publication h3{
     font-size: 1.15rem;
     color: #fff;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 .pub-journal {
     color: var(--primary);
     font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 .pub-desc {
     font-size: 0.9rem;
@@ -269,26 +286,7 @@ a{
     padding: 2px 8px;
     border-radius: 4px;
     margin-top: 8px;
-}
-
-/* 新闻模块 */
-.news-container {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    border-radius: 16px;
-}
-.news-item{
-    display: flex;
-    gap: 15px;
-    margin-bottom:15px;
-    font-size: 0.95rem;
-}
-.news-item:last-child { margin-bottom: 0; }
-.news-date {
-    color: var(--primary);
-    font-weight: 600;
-    min-width: 90px;
+    margin-right: 6px;
 }
 
 /* 时间轴 */
@@ -322,7 +320,7 @@ a{
     font-weight: bold;
     color: #cbd5e1;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 /* 数据统计 */
@@ -339,7 +337,7 @@ a{
     text-align:center;
 }
 .number{
-    font-size:2.8rem;
+    font-size:2.6rem;
     background: linear-gradient(135deg, #fff 0%, #38bdf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -353,24 +351,33 @@ a{
 
 footer{
     text-align:center;
-    padding:60px 0;
+    padding:40px 0;
     color: var(--text-muted);
     font-size: 0.9rem;
     border-top: 1px solid var(--border-color);
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
+/* 响应式媒体查询优化 */
 @media(max-width:768px){
-    nav { display: none; }
-    section { padding: 60px 0; }
+    body { padding-top: 60px; }
+    .nav-container { padding: 10px 0; }
+    .nav-links { gap: 15px; }
+    .nav-links a { font-size: 0.85rem; }
+    .lang-switch-btn { padding: 4px 8px; font-size: 0.75rem; }
+    
+    section { padding: 50px 0 30px 0; }
+    .hero { min-height: auto; }
     .hero-content{
         grid-template-columns:1fr;
         text-align:center;
         gap: 30px;
     }
     .avatar-wrapper { margin: auto; }
-    .hero h1{ font-size:2.6rem; }
+    .hero h1{ font-size:2.4rem; }
+    .hero h1 .ename { font-size: 2.2rem; }
     .stats{ grid-template-columns:1fr 1fr; gap: 15px; }
+    h2 { font-size: 1.6rem; }
 }
 </style>
 </head>
@@ -394,7 +401,7 @@ footer{
                 <a href="#experience"><span class="lang-zh">科研经历</span><span class="lang-en">Experience</span></a>
             </li>
             <li>
-                <button class="lang-switch-btn" onclick="toggleLanguage()">中 / EN</button>
+                <button class="lang-switch-btn" onclick="toggleLanguage()" aria-label="Toggle Language">中 / EN</button>
             </li>
         </ul>
     </div>
@@ -409,25 +416,38 @@ footer{
     <div>
     <h1>
         <span class="lang-zh">郭宇航</span>
-        <span class="lang-en" style="font-size: 3.2rem; letter-spacing: -0.5px;">Yuhang Guo</span>
-        <span class="lang-zh" style="font-size:2rem; font-weight:400; color:var(--text-muted); margin-left: 10px;">Yuhang Guo</span>
+        <span class="lang-en enname">Yuhang Guo</span>
     </h1>
     
     <div class="subtitle lang-zh">博士研究生 @ 同济大学</div>
     <div class="subtitle lang-en">Ph.D. Candidate @ Tongji University</div>
     
-    <p style="font-size: 1.1rem; margin-bottom: 15px;">
-        <span class="lang-zh">我专注于 <span class="highlight">机器学习</span>、<span class="highlight">运筹优化</span>与<span class="highlight">交通运输系统</span>的交叉研究。</span>
-        <span class="lang-en">I work at the intersection of <span class="highlight">Machine Learning</span>, <span class="highlight">Optimization</span>, and <span class="highlight">Transportation Systems</span>.</span>
+    <p class="research-line">
+        <span class="lang-zh">
+            我专注于
+            <span class="highlight">机器学习</span>、
+            <span class="highlight">运筹优化</span>
+            与
+            <span class="highlight">交通运输系统</span>
+            的交叉研究。
+        </span>
+
+        <span class="lang-en">
+            I work at the intersection of
+            <span class="highlight">Machine Learning</span>,
+            <span class="highlight">Optimization</span>,
+            and
+            <span class="highlight">Transportation Systems</span>.
+        </span>
     </p>
     <p>
         <span class="lang-zh">主要研究方向包括：端到端预测-优化耦合框架（SPO）、数据驱动的复杂系统建模、车辆前瞻性调度、大规模路径优化等。</span>
         <span class="lang-en">My research focuses on Decision-Focused Learning, Smart Predict-then-Optimize (SPO), Vehicle Rebalancing, and Large-Scale Mobility Optimization.</span>
     </p>
     <br>
-    <a class="btn" href="#"><i class="fa-solid fa-file-pdf"></i> <span class="lang-zh">下载简历</span><span class="lang-en">Resume/CV</span></a>
-    <a class="btn btn-secondary" href="https://scholar.google.cz/citations?user=fADZ3OkAAAAJ" target="_blank"><i class="fa-graduation-cap"></i> Google Scholar</a>
-    <a class="btn btn-secondary" href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    <a class="btn" href="#resume" download><i class="fa-solid fa-file-pdf"></i> <span class="lang-zh">下载简历</span><span class="lang-en">Resume/CV</span></a>
+    <a class="btn btn-secondary" href="https://scholar.google.cz/citations?user=fADZ3OkAAAAJ" target="_blank" rel="noopener"><i class="fa-graduation-cap"></i> Google Scholar</a>
+    <a class="btn btn-secondary" href="https://github.com" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
     <a class="btn btn-secondary" href="mailto:2111215@tongji.edu.cn"><i class="fa-solid fa-envelope"></i> Email</a>
 </div>
 </div>
@@ -436,51 +456,123 @@ footer{
 
 <section id="about">
 <div class="container">
-    <h2><i class="fa-regular fa-user"></i> <span class="lang-zh">关于我</span><span class="lang-en">About Me</span></h2>
+    <h2>
+        <i class="fa-regular fa-user"></i> 
+        <span class="lang-zh">关于我</span>
+        <span class="lang-en">About Me</span>
+    </h2>
     
     <div class="lang-zh">
-        <p>目前是同济大学交通信息与控制工程专业的在读博士研究生。研究工作致力于将数据驱动的机器学习技术与经典运筹学算法相结合，解决智慧城市和高体量出行平台中的核心决策痛点。</p>
+        <p><i class="fa-solid fa-graduation-cap"></i> 同济大学在读博士研究生（2027年应届）</p>
+        <p><i class="fa-solid fa-brain"></i> 数据驱动的机器学习技术与运筹学算法相结合</p>
+        <p><i class="fa-solid fa-city"></i> 旨在解决智慧城市交通中的核心决策痛点</p>
+
         <br>
-        <p>近两年来，与<strong>滴滴出行</strong>算法团队开展了深度项目与学术合作，主导设计了多项端到端预测-决策耦合框架。相关算法已在真实城市级仿真环境及上海临港新片区需求响应式公交服务中上线运行，实现了学术理论在工业界的实体落地。</p>
+
+        <p><strong><i class="fa-solid fa-school"></i> 教育经历</strong></p>
+        <p style="margin-top: 6px; padding-left: 10px;">
+            <i class="fa-solid fa-user-graduate"></i> 2021 - 2027：同济大学｜博士研究生（交通信息工程与控制）
+        </p>
+        <p style="margin-top: 6px; padding-left: 10px;">
+            <i class="fa-solid fa-graduation-cap"></i> 2017 - 2021：同济大学｜本科（交通工程）
+        </p>
+
+        <br>
+
+        <p><i class="fa-solid fa-diagram-project"></i> 近两年来，主要主导及参与了以下核心落地项目：</p>
+
+        <p style="margin-top: 8px; margin-bottom: 8px; padding-left: 10px;">
+            <i class="fa-brands fa-uber"></i> 滴滴出行算法团队深度学术合作：主导设计了多项端到端预测-决策耦合框架与司机激励机制，用于网约车超大规模车辆重分配。相关算法已在城市级真实网约车仿真环境中上线验证。
+        </p>
+
+        <p style="margin-top: 8px; margin-bottom: 8px; padding-left: 10px;">
+            <i class="fa-solid fa-bus"></i> 上海临港新片区需求响应式公交系统：负责研发考虑多模式协同的定制公交线路滚动优化算法，并成功在临港新片区的实际公交运营服务中实体落地。
+        </p>
     </div>
     
     <div class="lang-en">
-        <p>I am currently a Ph.D. candidate in Transportation Information and Control Engineering at <strong>Tongji University</strong>. My research interests lie at the intersection of data-driven machine learning, operations research, and intelligent transportation systems.</p>
+        <p>I am currently a Ph.D. candidate in Transportation Information and Control Engineering at Tongji University. My research focuses on bridging data-driven machine learning with mathematical programming (predict-then-optimize frameworks) to tackle large-scale decision-making challenges in smart cities and modern mobility platforms.</p>
+
         <br>
-        <p>Recently, I have been working closely with industry leader <strong>Didi Chuxing</strong> on end-to-end predict-then-optimize frameworks, decision-focused learning under uncertainty, and large-scale mobility optimization for ride-hailing and demand-responsive transit systems.</p>
+
+        <p><strong><i class="fa-solid fa-school"></i> Education</strong></p>
+        <p style="margin-top: 6px; padding-left: 10px;">
+            2021 - 2027: Tongji University | Ph.D. in Transportation Information and Control Engineering
+        </p>
+        <p style="margin-top: 6px; padding-left: 10px;">
+            2017 - 2021: Tongji University | B.S. in Transportation Engineering
+        </p>
+
+        <br>
+
+        <p><i class="fa-solid fa-diagram-project"></i> Recently, I have led and majorly contributed to two key industrial and real-world deployment projects:</p>
+
+        <p style="margin-top: 8px; margin-bottom: 8px; padding-left: 10px;">
+            <i class="fa-solid fa-car"></i> Collaborative R&D with Didi Chuxing: Led the design of end-to-end decision-focused learning frameworks and incentive mechanisms for large-scale ride-hailing vehicle rebalancing, validated in city-level production simulators.
+        </p>
+
+        <p style="margin-top: 8px; margin-bottom: 8px; padding-left: 10px;">
+            <i class="fa-solid fa-bus"></i> Demand-Responsive Transit System in Lin-gang Special Area, Shanghai: Developed co-opetition and rolling-horizon customized bus routing algorithms, which have been successfully deployed in real-world transit services.
+        </p>
     </div>
 </div>
 </section>
 
 <section id="interests">
 <div class="container">
-    <h2><i class="fa-solid fa-microscope"></i> <span class="lang-zh">研究方向</span><span class="lang-en">Research Interests</span></h2>
+    <h2>
+        <i class="fa-solid fa-microscope"></i> 
+        <span class="lang-zh">研究方向</span>
+        <span class="lang-en">Research Interests</span>
+    </h2>
+
     <div class="grid">
+
         <div class="card">
-            <h3>Predict-then-Optimize</h3>
-            <p class="lang-zh">端到端预测决策耦合。针对决策不确定性、仿真损失不可微及黑盒模型设计损失函数与梯度估计方法。</p>
-            <p class="lang-en">Decision-focused learning algorithms designed for end-to-end combinatorial and nonlinear optimization under uncertainty.</p>
+            <h3 class="lang-zh">
+                <i class="fa-solid fa-brain"></i> 预测-优化耦合方法
+            </h3>
+            <h3 class="lang-en">
+                <i class="fa-solid fa-brain"></i> Smart Predict-then-Optimize
+            </h3>
+            <p class="lang-zh">
+                端到端预测决策耦合。针对决策不确定性、仿真损失不可微及黑盒模型设计损失函数与梯度估计方法。
+            </p>
+            <p class="lang-en">
+                Decision-focused learning algorithms designed for end-to-end combinatorial and nonlinear optimization under uncertainty.
+            </p>
         </div>
         
         <div class="card">
-            <h3>Large-scale Optimization</h3>
-            <p class="lang-zh">大规模随机优化与启发式求解。利用增广拉格朗日（ADMM）和问题解耦技术提升大规模VRP求解效率。</p>
-            <p class="lang-en">Stochastic optimization, ADMM decomposition, and heuristic approaches for massive transport networks.</p>
+            <h3 class="lang-zh">
+                <i class="fa-solid fa-gears"></i> 大规模问题优化求解
+            </h3>
+            <h3 class="lang-en">
+                <i class="fa-solid fa-gears"></i> Large-scale Problem Optimization
+            </h3>
+            <p class="lang-zh">
+                大规模随机优化与启发式求解。利用增广拉格朗日（ADMM）和多种问题解耦、线性化技术提升大规模优化问题求解效率。
+            </p>
+            <p class="lang-en">
+                Stochastic optimization, ADMM decomposition, and heuristic algorithms for large-scale vehicle routing problems (VRP) in real-world transit systems.
+            </p>
         </div>
         
         <div class="card">
-            <h3 class="lang-zh">需求响应式出行系统</h3>
-            <h3 class="lang-en">Demand Responsive Mobility</h3>
-            <p class="lang-zh">多模式供给协同优化。涵盖网约车供需双边不确定性下的前瞻性车辆调度，以及灵活公交在长期定价与实时路径（VRP）上的多阶段随机优化。</p>
-            <p class="lang-en">Co-optimization of multi-modal transit. Integrating predictive fleet rebalancing under dual-sided uncertainty with joint pricing and routing for flexible on-demand bus services.</p>
+            <h3 class="lang-zh">
+                <i class="fa-solid fa-route"></i> 需求响应式出行系统
+            </h3>
+            <h3 class="lang-en">
+                <i class="fa-solid fa-route"></i> Demand Responsive Mobility
+            </h3>
+            <p class="lang-zh">
+                多模式供给协同优化。涵盖网约车供需双边不确定性下的前瞻性车辆调度，以及灵活公交在长期定价与实时路径（VRP）上的多阶段随机优化。
+            </p>
+            <p class="lang-en">
+                Co-optimization of multi-modal transit. Integrating predictive fleet rebalancing under dual-sided uncertainty with joint pricing and routing for flexible on-demand bus services.
+            </p>
         </div>
-    
-        <div class="card">
-            <h3 class="lang-zh">工业级算法落地</h3>
-            <h3 class="lang-en">Industrial Deployment</h3>
-            <p class="lang-zh">学术成果工程化应用。主导的调度与路径规划算法在滴滴出行城市级时空仿真环境进行深度验证，并成功上线于上海临港新片区智慧公交系统。</p>
-            <p class="lang-en">Translating research into practice. Algorithms verified in city-scale simulators at Didi Chuxing and successfully deployed in real-world transit systems in Shanghai Lin-gang Area.</p>
-        </div>
+
     </div>
 </div>
 </section>
@@ -492,33 +584,76 @@ footer{
     <div class="publication">
         <h3>A Smart Predict-then-Optimize Framework for Vehicle Rebalancing Problem</h3>
         <div class="pub-journal">Transportation Research Part B: Methodological</div>
-        <div class="pub-desc lang-zh">独立一作, SCI 1区, <strong>交通运筹Top2期刊</strong> || 网约车调度，预测-决策耦合，约束不确定性</div>
-        <div class="pub-desc lang-en">Independent First Author, SCI Q1, Top 2 Journal in Operations Research & Transportation</div>
-        <span class="pub-tag">Decision-Focused Learning</span> <span class="pub-tag">Fleet Management</span>
+        
+        <div class="pub-tags-group lang-zh">
+            <span class="pub-tag tag-author">独立一作</span>
+            <span class="pub-tag tag-rank">SCI Q1</span>
+            <span class="pub-tag tag-app">网约车调度</span>
+            <span class="pub-tag tag-method">预测-决策耦合</span>
+            <span class="pub-tag tag-method">约束不确定性</span>
+        </div>
+        <div class="pub-tags-group lang-en">
+            <span class="pub-tag tag-author">First Author</span>
+            <span class="pub-tag tag-rank">SCI Q1</span>
+            <span class="pub-tag tag-app">Fleet Management</span>
+            <span class="pub-tag tag-method">Decision-Focused Learning</span>
+        </div>
     </div>
 
     <div class="publication">
         <h3>Joint Optimization of Vehicle Rebalancing and Incentive Design under Partial Driver Compliance</h3>
         <div class="pub-journal">Transportation Science</div>
-        <div class="pub-desc lang-zh">独立一作, SCI 1区, <strong>交通运筹Top1期刊</strong> || 司机激励，非线性优化，预测-决策耦合 (Major Revision)</div>
-        <div class="pub-desc lang-en">Independent First Author, SCI Q1, Top 1 Journal in Operations Research & Logistics (Major Revision)</div>
-        <span class="pub-tag">Nonlinear Optimization</span> <span class="pub-tag">Incentive Mechanism</span>
+        
+        <div class="pub-tags-group lang-zh">
+            <span class="pub-tag tag-author">独立一作</span>
+            <span class="pub-tag tag-rank">SCI Q1</span>
+            <span class="pub-tag tag-status">Major Revision</span>
+            <span class="pub-tag tag-app">司机激励</span>
+            <span class="pub-tag tag-method">非线性优化</span>
+        </div>
+        <div class="pub-tags-group lang-en">
+            <span class="pub-tag tag-author">First Author</span>
+            <span class="pub-tag tag-rank">SCI Q1</span>
+            <span class="pub-tag tag-status">Major Revision</span>
+            <span class="pub-tag tag-method">Nonlinear Optimization</span>
+            <span class="pub-tag tag-method">Incentive Mechanism</span>
+        </div>
     </div>
 
     <div class="publication">
         <h3>Customized Bus Routing Problem Considering Co-opetition with Taxis at Transport Hubs</h3>
         <div class="pub-journal">Transportation Research Part E: Logistics and Transportation Review</div>
-        <div class="pub-desc lang-zh">独立一作, SCI 1区, <strong>交通运筹Top3期刊</strong> || 路径优化，梯度搜索，滚动优化</div>
-        <div class="pub-desc lang-en">Independent First Author, SCI Q1, Top 3 Journal</div>
-        <span class="pub-tag">Vehicle Routing (VRP)</span> <span class="pub-tag">Gradient Search</span>
+        
+        <div class="pub-tags-group lang-zh">
+            <span class="pub-tag tag-author">独立一作</span>
+            <span class="pub-tag tag-rank">SCI Q1</span>
+            <span class="pub-tag tag-app">路径优化</span>
+            <span class="pub-tag tag-method">梯度搜索</span>
+            <span class="pub-tag tag-method">滚动优化</span>
+        </div>
+        <div class="pub-tags-group lang-en">
+            <span class="pub-tag tag-author">First Author</span>
+            <span class="pub-tag tag-rank">SCI Q1</span>
+            <span class="pub-tag tag-app">Vehicle Routing</span>
+            <span class="pub-tag tag-method">Gradient Search</span>
+        </div>
     </div>
 
     <div class="publication">
         <h3 class="lang-zh">考虑出租车协同服务的枢纽定制公交线路优化</h3>
-        <h3 class="lang-en">Customized Bus Routing Considering Co-opetition with Taxis</h3>
-        <div class="pub-journal">清华大学学报(自然科学版)</div>
-        <div class="pub-desc lang-zh">独立一作, 中文核心 EI</div>
-        <div class="pub-desc lang-en">Independent First Author, EI Compendex</div>
+        <h3 class="lang-en">Customized Bus Routing Problem Considering Co-opetition with Taxis at Transport Hubs</h3>
+        <div class="pub-journal"><span class="lang-zh">清华大学学报(自然科学版)</span><span class="lang-en">Journal of Tsinghua University (Science and Technology)</span></div>
+        
+        <div class="pub-tags-group lang-zh">
+            <span class="pub-tag tag-author">独立一作</span>
+            <span class="pub-tag tag-rank">中文核心</span>
+            <span class="pub-tag tag-rank">EI 收录</span>
+        </div>
+        <div class="pub-tags-group lang-en">
+            <span class="pub-tag tag-author">First Author</span>
+            <span class="pub-tag tag-rank">EI Compendex</span>
+            <span class="pub-tag tag-rank">Core Journal (CN)</span>
+        </div>
     </div>
 </div>
 </section>
@@ -531,7 +666,7 @@ footer{
             <span class="time-meta">2023.11 - 2024.11</span>
             <h3 style="color:#fff; margin-top:2px;" class="lang-zh">滴滴出行 —— 算法研究实习生</h3>
             <h3 style="color:#fff; margin-top:2px;" class="lang-en">Didi Chuxing — Research Intern</h3>
-            <div class="exp-sub lang-zh">供需双边不确定下的车辆调度项目</div>
+            <div class="exp-sub lang-zh">供需双边不确定下的车辆调度算法</div>
             <div class="exp-sub lang-en">Fleet Management & Uncertainty Optimization</div>
             <p class="lang-zh">针对网约车“预测准但决策效果差”的痛点，设计了通用的端到端预测-优化耦合框架（SPO）。在北方头部城市晚高峰调度场景中，平台核心指标GMV相比传统两阶段方法取得明显离线与仿真提升。</p>
             <p class="lang-en">Developed an end-to-end Smart Predict-then-Optimize (SPO) framework bridging the gap between machine learning predictions and mixed-integer linear program (MILP) matching decisions, achieving significant real-world simulator GMV improvements.</p>
@@ -542,7 +677,7 @@ footer{
             <h3 style="color:#fff; margin-top:2px;" class="lang-en">Demand Responsive Transit Project — Lead Algorithm Engineer</h3>
             <div class="exp-sub lang-zh">微信小程序："巴士随心订" 核心算法支持</div>
             <div class="exp-sub lang-en">WeChat Mini-Program Deployment</div>
-            <p class="lang-zh">负责上海临港新片区需求响应式公交后台的大规模车辆路径优化（VRP）算法开发。基于增广拉格朗日的ADMM方法实现大规模问题高效解耦求解，算法已成功上线。</p>
+            <p class="lang-zh">负责上海临港新片区需求响应式公交后台的大规模车辆路径优化（VRP）算法开发。基于增广拉格朗日的ADMM方法实现大规模问题高效解耦求解，算法已成功上线运行。</p>
             <p class="lang-en">Designed routing and deployment algorithms in Shanghai Lin-gang Special Area, solving massive VRP instances using ADMM decomposition techniques for demand-responsive services.</p>
         </div>
     </div>
@@ -581,14 +716,14 @@ footer{
 <div class="container">
     <h2><i class="fa-solid fa-gears"></i> <span class="lang-zh">专业技能</span><span class="lang-en">Skills</span></h2>
     <div class="card" style="background: var(--card-bg);">
-        <p style="margin-bottom: 10px;">
+        <p style="margin-bottom: 12px;">
             <strong><span class="lang-zh">运筹与算法：</span><span class="lang-en">Methodologies:</span></strong> 
             <span class="lang-zh">熟悉数据分析、主流机器学习算法与运筹优化建模求解技术，擅长数据驱动决策/优化方法。良好的英语听说读写能力。</span>
-            <span class="lang-en">Predict-then-Optimize (SPO), Data-driven decision making, Stochastic optimization, Machine learning.</span>
+            <span class="lang-en">Smart Predict-then-Optimize (SPO), Data-driven decision making, Stochastic optimization, Machine learning.</span>
         </p>
         <p>
             <strong><span class="lang-zh">编程与工具：</span><span class="lang-en">Tools & Programming:</span></strong> 
-            <span class="lang-zh">熟练掌握 Python等语言、熟悉SQL、PyTorch、Hadoop、Spark 等框架，熟悉运筹优化求解器 Gurobi、SCIP等。</span>
+            <span class="lang-zh">熟练掌握 Python 等语言、熟悉 SQL、PyTorch、Hadoop、Spark 等框架，熟悉运筹优化求解器 Gurobi、SCIP 等。</span>
             <span class="lang-en">Python, SQL, PyTorch, Hadoop, Spark, Gurobi, SCIP.</span>
         </p>
     </div>
@@ -604,19 +739,17 @@ footer{
 <script>
 function toggleLanguage() {
     const htmlEl = document.documentElement;
-    // 获取当前的语言状态
     const currentLang = htmlEl.getAttribute('lang');
     
     if (currentLang === 'zh') {
         htmlEl.setAttribute('lang', 'en');
-        localStorage.setItem('preferred-lang', 'en'); // 记住用户的语言选择
+        localStorage.setItem('preferred-lang', 'en'); 
     } else {
         htmlEl.setAttribute('lang', 'zh');
         localStorage.setItem('preferred-lang', 'zh');
     }
 }
 
-// 页面加载时自动应用用户上次选择的语言（默认为中文）
 document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem('preferred-lang') || 'zh';
     document.documentElement.setAttribute('lang', savedLang);
