@@ -172,8 +172,17 @@ a{
 }
 .avatar-wrapper {
     position: relative;
-    width: 260px;
+    width: 260px;  /* 保持 260px 框框大小不变 */
     height: 260px;
+    
+    /* ================= 👇 新增这行内边距 👇 ================= */
+    padding: 25px; /* 让照片向内缩进 20px，你可以根据喜好改成 15px 或 30px */
+    /* ================= 👆 新增这行内边距 👆 ================= */
+    
+    /* 选做：可以给大框框加个微弱的背景色或边框，让“留白”更有质感 */
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
 }
 .avatar{
     width: 100%;
@@ -398,25 +407,29 @@ footer{
         <img src="avatar.jpg" class="avatar" alt="Yuhang Guo">
     </div>
     <div>
-        <h1>郭宇航 <span style="font-size:2rem; font-weight:400; color:var(--text-muted)">Yuhang Guo</span></h1>
-        
-        <div class="subtitle class-zh">博士研究生 @ 同济大学</div>
-        <div class="subtitle lang-en">Ph.D. Candidate @ Tongji University</div>
-        
-        <p style="font-size: 1.1rem; margin-bottom: 15px;">
-            <span class="lang-zh">我专注于 <span class="highlight">机器学习</span>、<span class="highlight">运筹优化</span>与<span class="highlight">交通运输系统</span>的交叉研究。</span>
-            <span class="lang-en">I work at the intersection of <span class="highlight">Machine Learning</span>, <span class="highlight">Optimization</span>, and <span class="highlight">Transportation Systems</span>.</span>
-        </p>
-        <p>
-            <span class="lang-zh">主要研究方向包括：端到端预测-优化耦合框架（SPO）、数据驱动的复杂系统建模、车辆前瞻性调度、大规模路径优化等。</span>
-            <span class="lang-en">My research focuses on Decision-Focused Learning, Smart Predict-then-Optimize (SPO), Vehicle Rebalancing, and Large-Scale Mobility Optimization.</span>
-        </p>
-        <br>
-        <a class="btn" href="#"><i class="fa-solid fa-file-pdf"></i> <span class="lang-zh">下载简历</span><span class="lang-en">Resume/CV</span></a>
-        <a class="btn btn-secondary" href="https://scholar.google.cz/citations?user=fADZ3OkAAAAJ" target="_blank"><i class="fa-graduation-cap"></i> Google Scholar</a>
-        <a class="btn btn-secondary" href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a class="btn btn-secondary" href="mailto:2111215@tongji.edu.cn"><i class="fa-solid fa-envelope"></i> Email</a>
-    </div>
+    <h1>
+        <span class="lang-zh">郭宇航</span>
+        <span class="lang-en" style="font-size: 3.2rem; letter-spacing: -0.5px;">Yuhang Guo</span>
+        <span class="lang-zh" style="font-size:2rem; font-weight:400; color:var(--text-muted); margin-left: 10px;">Yuhang Guo</span>
+    </h1>
+    
+    <div class="subtitle lang-zh">博士研究生 @ 同济大学</div>
+    <div class="subtitle lang-en">Ph.D. Candidate @ Tongji University</div>
+    
+    <p style="font-size: 1.1rem; margin-bottom: 15px;">
+        <span class="lang-zh">我专注于 <span class="highlight">机器学习</span>、<span class="highlight">运筹优化</span>与<span class="highlight">交通运输系统</span>的交叉研究。</span>
+        <span class="lang-en">I work at the intersection of <span class="highlight">Machine Learning</span>, <span class="highlight">Optimization</span>, and <span class="highlight">Transportation Systems</span>.</span>
+    </p>
+    <p>
+        <span class="lang-zh">主要研究方向包括：端到端预测-优化耦合框架（SPO）、数据驱动的复杂系统建模、车辆前瞻性调度、大规模路径优化等。</span>
+        <span class="lang-en">My research focuses on Decision-Focused Learning, Smart Predict-then-Optimize (SPO), Vehicle Rebalancing, and Large-Scale Mobility Optimization.</span>
+    </p>
+    <br>
+    <a class="btn" href="#"><i class="fa-solid fa-file-pdf"></i> <span class="lang-zh">下载简历</span><span class="lang-en">Resume/CV</span></a>
+    <a class="btn btn-secondary" href="https://scholar.google.cz/citations?user=fADZ3OkAAAAJ" target="_blank"><i class="fa-graduation-cap"></i> Google Scholar</a>
+    <a class="btn btn-secondary" href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    <a class="btn btn-secondary" href="mailto:2111215@tongji.edu.cn"><i class="fa-solid fa-envelope"></i> Email</a>
+</div>
 </div>
 </div>
 </section>
@@ -448,20 +461,25 @@ footer{
             <p class="lang-zh">端到端预测决策耦合。针对决策不确定性、仿真损失不可微及黑盒模型设计损失函数与梯度估计方法。</p>
             <p class="lang-en">Decision-focused learning algorithms designed for end-to-end combinatorial and nonlinear optimization under uncertainty.</p>
         </div>
+        
         <div class="card">
             <h3>Large-scale Optimization</h3>
             <p class="lang-zh">大规模随机优化与启发式求解。利用增广拉格朗日（ADMM）和问题解耦技术提升大规模VRP求解效率。</p>
             <p class="lang-en">Stochastic optimization, ADMM decomposition, and heuristic approaches for massive transport networks.</p>
         </div>
+        
         <div class="card">
-            <h3>Vehicle Rebalancing</h3>
-            <p class="lang-zh">网约车供需失衡治理。在订单与运力实时波动的“双边不确定性”下，进行前瞻性车辆调度。</p>
-            <p class="lang-en">Predictive and anticipatory fleet rebalancing strategies for massive ride-hailing networks considering two-sided uncertainties.</p>
+            <h3 class="lang-zh">需求响应式出行系统</h3>
+            <h3 class="lang-en">Demand Responsive Mobility</h3>
+            <p class="lang-zh">多模式供给协同优化。涵盖网约车供需双边不确定性下的前瞻性车辆调度，以及灵活公交在长期定价与实时路径（VRP）上的多阶段随机优化。</p>
+            <p class="lang-en">Co-optimization of multi-modal transit. Integrating predictive fleet rebalancing under dual-sided uncertainty with joint pricing and routing for flexible on-demand bus services.</p>
         </div>
+    
         <div class="card">
-            <h3>Demand Responsive Transit</h3>
-            <p class="lang-zh">灵活公交与多层次协同。将长期定价策略与实时路径调度相结合，建立多阶段随机优化决策模型。</p>
-            <p class="lang-en">Joint pricing, vehicle routing, and strategic scheduling for flexible customized bus systems.</p>
+            <h3 class="lang-zh">工业级算法落地</h3>
+            <h3 class="lang-en">Industrial Deployment</h3>
+            <p class="lang-zh">学术成果工程化应用。主导的调度与路径规划算法在滴滴出行城市级时空仿真环境进行深度验证，并成功上线于上海临港新片区智慧公交系统。</p>
+            <p class="lang-en">Translating research into practice. Algorithms verified in city-scale simulators at Didi Chuxing and successfully deployed in real-world transit systems in Shanghai Lin-gang Area.</p>
         </div>
     </div>
 </div>
