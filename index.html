@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭宇航的个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #004F90; /* 同济大学经典蓝/原简历主色 */
+            --accent-color: #337AB7;
+            --text-dark: #333333;
+            --text-gray: #404040;
+            --bg-light: #f8f9fa;
+            --border-color: #dfdfdf;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* 顶部排版 */
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        .contact-info a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 6px;
+        }
+
+        /* 模块样式 */
+        section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 经历条目排版 */
+        .entry {
+            margin-bottom: 20px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+
+        .entry-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .entry-subtitle {
+            font-size: 15px;
+            color: var(--text-gray);
+            font-style: italic;
+            margin-left: 10px;
+        }
+
+        .entry-time {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        /* 亮点列表 */
+        ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            font-size: 14.5px;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        ul li::before {
+            content: "○";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .sub-block-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .paper-author {
+            display: block;
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 2px;
+            margin-bottom: 10px;
+        }
+
+        a.external-link {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        a.external-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式适配移动端 */
+        @media (max-width: 768px) {
+            body { padding: 10px 0; }
+            .container { padding: 30px 20px; box-shadow: none; border-radius: 0; }
+            .entry-header { flex-direction: column; }
+            .entry-time { margin-top: 4px; }
+            .paper-author { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>郭宇航</h1>
+        <div class="contact-info">
+            <span><i class="fa-solid fa-map-marker-alt"></i>上海市</span>
+            <span><i class="fa-regular fa-envelope"></i><a href="mailto:2111215@tongji.edu.cn">2111215@tongji.edu.cn</a></span>
+            <span><i class="fa-solid fa-phone"></i>15716728193</span>
+            <span><i class="fa-brands fa-weixin"></i>15716728193</span>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">教育背景</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">本科：同济大学</span>
+                    <span class="entry-subtitle">交通工程 工学学士</span>
+                </div>
+                <span class="entry-time">2017.09 - 2021.07</span>
+            </div>
+            <ul>
+                <li>GPA：4.77/5 <span class="highlight-text">排名：2/40，上海市优秀毕业生，同济大学奖学金</span></li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">博士：同济大学</span>
+                    <span class="entry-subtitle">交通信息与控制工程</span>
+                </div>
+                <span class="entry-time">2021.09 - 2027.03</span>
+            </div>
+            <ul>
+                <li>GPA：4.61/5 <span class="highlight-text">排名：前5%，同济大学优秀学生，华为杯研究生数模竞赛二等奖</span></li>
+                <li>学术成果：发表 <span class="highlight-text">SCI期刊论文 4 篇，EI论文 1 篇，授权发明专利2项</span> <a class="external-link" href="https://scholar.google.cz/citations?user=fADZ3OkAAAAJ" target="_blank">（Google Scholar <i class="fa-solid fa-external-link-alt" style="font-size:11px;"></i>）</a></li>
+                <li>研究方向：数据驱动的预测-优化方法，非线性优化，随机优化，复杂系统建模，车辆调度，路径优化</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">实习经历</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">滴滴出行 —— 供需双边不确定下的车辆调度</span>
+                <span class="entry-time">2023.11 - 2024.11</span>
+            </div>
+            <div class="sub-block-title">现实需求</div>
+            <ul>
+                <li>供需动态失衡：订单与运力实时波动且有<span class="highlight-text">双边不确定性</span>，导致运力常态化错配，需依赖算法进行<span class="highlight-text">前瞻性调度</span>。</li>
+                <li>预测与决策脱节：传统<span class="highlight-text">预测与决策独立</span>，预测准不代表决策优，无法最大化运营指标（如成交率，GMV）。</li>
+            </ul>
+            <div class="sub-block-title">主要工作：针对网约车区域调度问题，设计优化层梯度回传方法，解决“预测更准但决策效果未提升”的问题。</div>
+            <ul>
+                <li><strong>业务建模与仿真环境构建</strong>：针对业务痛点抽象核心调度过程，构建<strong>混合整数优化模型</strong>以最大化平台核心收益指标GMV；同时搭建离线数据benchmark与<strong>城市级时空单元仿真环境</strong>，用于系统评估调度算法性能。</li>
+                <li><strong>预测决策耦合框架设计</strong>：设计通用预测-优化耦合训练框架（Smart Predict-then-Optimize, SPO），针对业务中面临的<strong>三类挑战（1）约束不确定、（2）仿真-based损失不可微及（3）预测模型黑盒</strong>，分别设计两阶段SPO损失函数、零阶优化梯度估计与超网络微调方法，实现决策性能的端到端优化。</li>
+                <li><strong>项目成果</strong>：在某北方头部城市<strong>晚高峰调度场景</strong>中，平台核心指标GMV相较Baseline提升2.19%（离线）、0.99%（仿真），相较两阶段预测-优化<strong>提升0.28%（离线）、0.38%（仿真）</strong>。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">研究经历</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">灵活公交 —— 复杂系统运营管理</span>
+                <span class="entry-time">研究课题</span>
+            </div>
+            <div class="sub-block-title">现实需求</div>
+            <ul>
+                <li>多阶段决策（定价、路径、调度）相互独立，难以实现全局最优。</li>
+                <li>乘客需求具有随机性且存在预约选择行为，增加系统建模与决策复杂度。</li>
+            </ul>
+            <div class="sub-block-title">主要工作</div>
+            <ul>
+                <li><strong>构建多层次协同决策模型</strong>：结合长期定价策略与实时路径调度，建立两阶段随机优化模型，实现全局最优。</li>
+                <li><strong>非线性响应函数与线性化</strong>：针对响应函数为凸函数、非凸函数两种情形，分别设计基于KKT条件的线性化方法与梯度搜索方法，加速问题求解。</li>
+                <li><strong>启发式求解策略设计</strong>：通过问题解耦与子问题分解提升求解效率；面向大规模多车辆路径优化（VRP），基于增广拉格朗日的ADMM方法进行分解求解。<span class="highlight-text">算法已在上海临港新片区“需求响应式”公交服务上线</span>。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">学术论文</h2>
+        <ul>
+            <li>
+                A smart predict-then-optimize framework for vehicle rebalancing problem. <em>Transportation Research Part B: Methodological</em>.
+                <span class="paper-author">（独立一作, SCI 1区, <strong>交通运筹Top2期刊</strong> || 网约车调度，预测-决策耦合，约束不确定性）</span>
+            </li>
+            <li>
+                Joint optimization of vehicle rebalancing and incentive design under partial driver compliance. <em>Transportation Science</em>.
+                <span class="paper-author">（独立一作, SCI 1区, <strong>交通运筹Top1期刊</strong>, major revision || 司机激励，非线性优化，预测-决策耦合）</span>
+            </li>
+            <li>
+                Customized bus routing problem considering co-opetition with taxis at transport hubs. <em>Transportation Research Part E: Logistics and Transportation Review</em>.
+                <span class="paper-author">（独立一作, SCI 1区, <strong>交通运筹Top3期刊</strong> || 路径优化，梯度搜索，滚动优化）</span>
+            </li>
+            <li>
+                Pricing method of the flexible bus service based on cumulative prospect theory. <em>Journal of Advanced Transportation</em>.
+                <span class="paper-author">（独立一作, SCI 2区）</span>
+            </li>
+            <li>
+                考虑出租车协同服务的枢纽定制公交线路优化. <em>清华大学学报(自然科学版)</em>.
+                <span class="paper-author">（独立一作, 中文核心 EI）</span>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">发明专利</h2>
+        <ul>
+            <li>基于端到端预测的网约车辆调度优化方法、设备及存储介质，专利号：ZL202510272065.X（<strong>已授权</strong>）</li>
+            <li>一种智能网联汽车低碳绿色车速引导方法，专利号：ZL202310338203.0（<strong>已授权</strong>）</li>
+            <li>基于出行码的资源管理方法、装置、可读介质及电子设备，申请号：CN202311860248（<strong>已公开</strong>）</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">获奖情况</h2>
+        <ul>
+            <li>同济大学优秀学生，上海市优秀毕业生，同济大学一等奖学金 ×3</li>
+            <li>华为杯研究生数学建模竞赛 <span class="highlight-text">二等奖</span>, 上海智能新能源汽车大数据竞赛 <span class="highlight-text">一等奖</span></li>
+            <li>中国高校数据驱动创新大赛 <span class="highlight-text">Rank 1/283</span>, CTS轨道客流预测大赛 <span class="highlight-text">Rank 6/425</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">项目经历</h2>
+        <div class="sub-block-title">纵向项目</div>
+        <ul>
+            <li>可持续创新型城市即时配送服务运营管理研究（中欧国际合作项目） <span style="float:right; color:#777;">2023.08 – 至今</span></li>
+            <li style="clear:both;">自动驾驶与人工驾驶混合网约车队接驳服务运营优化研究（国自然面上项目） <span style="float:right; color:#777;">2024.05 – 至今</span></li>
+            <li style="clear:both;">机场室内外全场景下智能装卸与运输技术研究（国家重点研发项目） <span style="float:right; color:#777;">2025.05 – 至今</span></li>
+        </ul>
+        <div class="sub-block-title" style="margin-top:15px; clear:both;">横向项目</div>
+        <ul>
+            <li>基于Vissim的自动小巴仿真平台搭建 （宇通客车小宇智能驾驶巴士） <span style="float:right; color:#777;">2022.09 – 2022.12</span></li>
+            <li style="clear:both;">上海浦东机场巴士线路运营优化（上海空港巴士集团） <span style="float:right; color:#777;">2023.08 – 2023.12</span></li>
+            <li style="clear:both;">网约车场景下的资源统筹规划与智能决策问题研究（滴滴盖亚学者基金） <span style="float:right; color:#777;">2023.11 – 2024.11</span></li>
+            <li style="clear:both;">智能网联公交需求响应型智慧出行系统研究（微信小程序：巴士随心订） <span style="float:right; color:#777;">2024.07 – 2025.09</span></li>
+        </ul>
+    </section>
+
+    <section style="clear:both; padding-top:10px;">
+        <h2 class="section-title">专业技能</h2>
+        <ul>
+            <li><strong>专业技能：</strong> 熟悉数据分析、主流机器学习算法与运筹优化建模求解技术，擅长数据驱动决策/优化方法。良好的英语听说读写能力。</li>
+            <li><strong>编程技术：</strong> 熟练掌握 Python等语言、熟悉SQL、PyTorch、Hadoop、Spark 等框架，熟悉运筹优化求解器 Gurobi、SCIP等。</li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>
